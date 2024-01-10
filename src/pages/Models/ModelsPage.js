@@ -25,7 +25,7 @@ const ModelsPage = () => {
         return;
       }
 
-      const response = await fetch("/api/cars", {
+      const response = await fetch("https://car-on-rent-backend.onrender.com/api/cars", {
         headers: {
           authorization: `Bearer ${user.token}`,
         },
