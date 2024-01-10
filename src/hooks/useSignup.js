@@ -11,7 +11,7 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("/api/user/signup", {
+    const response = await fetch("https://car-on-rent-backend.onrender.com/api/user/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export const useSignup = () => {
       setIsLoading(false);
       setError(json.error);
     }
-    if (response) {
+    if (response.ok) {
       //save the user to local storage
       localStorage.setItem("user", JSON.stringify(json));
 
